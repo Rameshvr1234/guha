@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Advisory Services - Expert Real Estate Investment Guidance | GUHA Promoters</title>
+    <meta name="description" content="Make informed real estate investment decisions with GUHA Promoters' expert advisory services. Get personalized investment strategies, market analysis, and portfolio management for maximum returns.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--color-navy) 0%, #2A3F5F 100%);
+            padding: var(--space-20) 0 var(--space-16);
+            margin-top: 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-family: var(--font-heading);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Service Introduction */
+        .service-intro {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--space-12);
+            align-items: center;
+        }
+
+        .intro-content h2 {
+            font-size: 2.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-6);
+            font-family: var(--font-heading);
+        }
+
+        .intro-content p {
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: var(--space-4);
+            font-size: 1.0625rem;
+        }
+
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .intro-stat {
+            text-align: center;
+            padding: var(--space-6);
+            background: var(--color-cream);
+            border-radius: 12px;
+        }
+
+        .intro-stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-terracotta);
+            font-family: var(--font-heading);
+            margin-bottom: var(--space-2);
+        }
+
+        .intro-stat-label {
+            color: var(--color-navy);
+            font-weight: 600;
+        }
+
+        .intro-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Why Invest Section */
+        .why-invest {
+            padding: var(--space-16) 0;
+            background: var(--color-cream);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-10);
+        }
+
+        .benefit-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
+            font-size: 2.5rem;
+            color: var(--color-terracotta);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-3);
+        }
+
+        .benefit-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Advisory Process */
+        .advisory-process {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: var(--space-10) auto 0;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: var(--space-6);
+            margin-bottom: var(--space-12);
+            align-items: center;
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-step:nth-child(even) .process-content {
+            order: 3;
+        }
+
+        .process-step:nth-child(even) .process-empty {
+            order: 1;
+        }
+
+        .process-content {
+            background: var(--color-cream);
+            padding: var(--space-6);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .process-content h3 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-3);
+        }
+
+        .process-content p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--color-terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .process-empty {
+            height: 1px;
+        }
+
+        /* Investment Opportunities */
+        .investment-opportunities {
+            padding: var(--space-16) 0;
+            background: var(--color-cream);
+        }
+
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-10);
+        }
+
+        .opportunity-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .opportunity-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .opportunity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .opportunity-card:hover .opportunity-image img {
+            transform: scale(1.05);
+        }
+
+        .opportunity-content {
+            padding: var(--space-6);
+        }
+
+        .opportunity-tag {
+            display: inline-block;
+            background: var(--color-terracotta);
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+
+        .opportunity-content h3 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-3);
+        }
+
+        .opportunity-content p {
+            color: var(--color-text);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+        }
+
+        .opportunity-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+
+        .opportunity-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: 0.9375rem;
+            color: var(--color-text);
+        }
+
+        .opportunity-feature i {
+            color: var(--color-terracotta);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--space-16) 0;
+            background: linear-gradient(135deg, var(--color-navy) 0%, #2A3F5F 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto var(--space-8);
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .contact-form-wrapper {
+            max-width: 800px;
+            margin: var(--space-10) auto 0;
+            background: var(--color-cream);
+            padding: var(--space-10);
+            border-radius: 12px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: var(--space-2);
+            color: var(--color-navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: var(--space-3) var(--space-4);
+            border: 2px solid white;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-terracotta);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step:nth-child(even) .process-content {
+                order: 1;
+            }
+
+            .process-step:nth-child(even) .process-empty {
+                display: none;
+            }
+
+            .process-empty {
+                display: none;
+            }
+
+            .process-number {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="GUHA Promoters" class="logo">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Projects</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                                <li><a href="projects-completed.html">Completed Projects</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h1>Investment Advisory Services</h1>
+                <p>Make informed real estate investment decisions with expert guidance from GUHA Promoters. Our personalized advisory services help you maximize returns and build a profitable property portfolio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Introduction -->
+    <section class="service-intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content" data-aos="fade-up">
+                    <h2>Your Trusted Real Estate Investment Partner</h2>
+                    <p>With over 30 years of experience in real estate development and investment, GUHA Promoters offers comprehensive investment advisory services to help you navigate the complex property market.</p>
+
+                    <p>Our team of seasoned professionals provides data-driven insights, market analysis, and personalized strategies to ensure your real estate investments deliver optimal returns. Whether you're a first-time investor or looking to expand your portfolio, we guide you every step of the way.</p>
+
+                    <p>From identifying high-potential properties to exit strategies, our holistic approach ensures your investment goals are achieved with maximum security and profitability.</p>
+
+                    <div class="intro-stats">
+                        <div class="intro-stat" data-aos="fade-up" data-aos-delay="100">
+                            <div class="intro-stat-number">30+</div>
+                            <div class="intro-stat-label">Years of Experience</div>
+                        </div>
+                        <div class="intro-stat" data-aos="fade-up" data-aos-delay="200">
+                            <div class="intro-stat-number">500+</div>
+                            <div class="intro-stat-label">Successful Investments</div>
+                        </div>
+                        <div class="intro-stat" data-aos="fade-up" data-aos-delay="300">
+                            <div class="intro-stat-number">25%</div>
+                            <div class="intro-stat-label">Average ROI</div>
+                        </div>
+                        <div class="intro-stat" data-aos="fade-up" data-aos-delay="400">
+                            <div class="intro-stat-number">100%</div>
+                            <div class="intro-stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-image" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/portfolio/guha_fantacy.jpg" alt="Real Estate Investment Advisory" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Invest in Real Estate -->
+    <section class="why-invest">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Invest in Real Estate?</h2>
+                <p>Real estate remains one of the most reliable and profitable investment avenues</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Steady Appreciation</h3>
+                    <p>Property values consistently appreciate over time, providing long-term wealth accumulation and capital gains.</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Passive Income</h3>
+                    <p>Generate regular rental income that can cover mortgage payments and provide additional cash flow.</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Tangible Asset</h3>
+                    <p>Unlike stocks or bonds, real estate is a physical asset you can see, touch, and utilize, providing security and stability.</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Tax Benefits</h3>
+                    <p>Enjoy various tax deductions on mortgage interest, property taxes, and depreciation to minimize your tax burden.</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Hedge Against Inflation</h3>
+                    <p>Real estate values and rents typically increase with inflation, protecting your purchasing power over time.</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Portfolio Diversification</h3>
+                    <p>Add real estate to diversify your investment portfolio and reduce overall risk through asset allocation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Process -->
+    <section class="advisory-process">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Investment Advisory Process</h2>
+                <p>A systematic approach to ensure your investment success</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="process-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We begin with understanding your investment goals, budget, risk appetite, and timeline. Our experts analyze your financial situation to create a personalized investment strategy.</p>
+                    </div>
+                    <div class="process-number">01</div>
+                    <div class="process-empty"></div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-empty"></div>
+                    <div class="process-number">02</div>
+                    <div class="process-content">
+                        <h3>Market Analysis</h3>
+                        <p>Our team conducts comprehensive market research, analyzing trends, growth potential, and pricing dynamics across different locations to identify the best investment opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-content">
+                        <h3>Property Selection</h3>
+                        <p>We present curated investment options that match your criteria, with detailed analysis of each property's potential returns, rental yields, and appreciation prospects.</p>
+                    </div>
+                    <div class="process-number">03</div>
+                    <div class="process-empty"></div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-empty"></div>
+                    <div class="process-number">04</div>
+                    <div class="process-content">
+                        <h3>Due Diligence</h3>
+                        <p>We conduct thorough legal verification, documentation review, and property inspection to ensure your investment is secure and compliant with all regulations.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-content">
+                        <h3>Transaction Support</h3>
+                        <p>Our team assists with negotiations, paperwork, financing options, and the complete transaction process to ensure a smooth and hassle-free investment experience.</p>
+                    </div>
+                    <div class="process-number">05</div>
+                    <div class="process-empty"></div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="process-empty"></div>
+                    <div class="process-number">06</div>
+                    <div class="process-content">
+                        <h3>Ongoing Management</h3>
+                        <p>Post-investment, we provide continuous support including portfolio tracking, market updates, rental management assistance, and exit strategy planning when needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    <section class="investment-opportunities">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Current Investment Opportunities</h2>
+                <p>Explore our handpicked properties with high return potential</p>
+            </div>
+
+            <div class="opportunities-grid">
+                <div class="opportunity-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="opportunity-image">
+                        <img src="images/portfolio/guha_fantacy.jpg" alt="GUHA Residency Investment" loading="lazy">
+                    </div>
+                    <div class="opportunity-content">
+                        <span class="opportunity-tag">Under Construction</span>
+                        <h3>GUHA Residency</h3>
+                        <p>Premium residential project in prime city center with excellent appreciation potential and rental demand. Expected ROI of 22% over 3 years.</p>
+
+                        <div class="opportunity-features">
+                            <div class="opportunity-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Prime Location</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>22% ROI</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-home"></i>
+                                <span>2, 3, 4 BHK</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-calendar"></i>
+                                <span>Dec 2025</span>
+                            </div>
+                        </div>
+
+                        <a href="project-guha-residency.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <div class="opportunity-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="opportunity-image">
+                        <img src="images/portfolio/guha_fantasy1.jpg" alt="GUHA Fantasy Investment" loading="lazy">
+                    </div>
+                    <div class="opportunity-content">
+                        <span class="opportunity-tag">Pre-Launch</span>
+                        <h3>GUHA Fantasy</h3>
+                        <p>Affordable housing in developing West District with strong rental yields. Perfect for first-time investors seeking steady returns.</p>
+
+                        <div class="opportunity-features">
+                            <div class="opportunity-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Growth Area</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>18% ROI</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-home"></i>
+                                <span>2, 3 BHK</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jun 2025</span>
+                            </div>
+                        </div>
+
+                        <a href="project-guha-fantasy.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <div class="opportunity-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="opportunity-image">
+                        <img src="images/portfolio/guha_fanatacy2.jpg" alt="GUHA Elite Investment" loading="lazy">
+                    </div>
+                    <div class="opportunity-content">
+                        <span class="opportunity-tag">VIP Preview</span>
+                        <h3>GUHA Elite</h3>
+                        <p>Ultra-luxury segment in prestigious North Business District. High-net-worth investment with premium appreciation and exclusivity.</p>
+
+                        <div class="opportunity-features">
+                            <div class="opportunity-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Premium Zone</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>28% ROI</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-home"></i>
+                                <span>3, 4 BHK + Penthouse</span>
+                            </div>
+                            <div class="opportunity-feature">
+                                <i class="fas fa-calendar"></i>
+                                <span>Sep 2025</span>
+                            </div>
+                        </div>
+
+                        <a href="project-guha-elite.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>Ready to Start Your Investment Journey?</h2>
+                <p>Schedule a free consultation with our investment advisors and discover how real estate can help you achieve your financial goals.</p>
+                <div class="cta-buttons">
+                    <a href="#contact-form" class="btn btn-white">Schedule Consultation</a>
+                    <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Download Investment Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact-form">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Get Investment Consultation</h2>
+                <p>Fill out the form below and our investment advisors will contact you within 24 hours</p>
+            </div>
+
+            <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <form id="investmentForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Investment Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select Budget Range</option>
+                                <option value="50-75">₹50 Lakhs - ₹75 Lakhs</option>
+                                <option value="75-1cr">₹75 Lakhs - ₹1 Crore</option>
+                                <option value="1cr-2cr">₹1 Crore - ₹2 Crores</option>
+                                <option value="2cr+">₹2 Crores+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Investment Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select Timeline</option>
+                                <option value="immediate">Immediate (0-3 months)</option>
+                                <option value="short">Short-term (3-6 months)</option>
+                                <option value="medium">Medium-term (6-12 months)</option>
+                                <option value="long">Long-term (12+ months)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" name="interest">
+                                <option value="">Select Interest</option>
+                                <option value="residential">Residential Apartments</option>
+                                <option value="luxury">Luxury Penthouses</option>
+                                <option value="commercial">Commercial Properties</option>
+                                <option value="plots">Land/Plots</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your investment goals and preferences..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="images/logo.png" alt="GUHA Promoters">
+                        </div>
+                        <p class="footer-desc">Building dreams, creating landmarks. Your trusted partner in real estate development with over 30 years of excellence.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                            <li><a href="projects-completed.html">Completed Projects</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="investment-advisory.html">Investment Advisory</a></li>
+                            <li><a href="turnkey-solutions.html">Turnkey Solutions</a></li>
+                            <li><a href="services.html">Property Management</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Business District, City Name, State - 560001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+91 98765 43210</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@guhapromoters.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 GUHA Promoters. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Contact Form Submission
+        document.getElementById('investmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! Our investment advisors will contact you within 24 hours to discuss your investment goals.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
