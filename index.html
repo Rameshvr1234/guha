@@ -140,9 +140,19 @@
 
     <!-- Hero Slider Section -->
     <section class="hero-slider" id="heroSlider">
-        <!-- Slide 1 -->
+        <!-- Slide 1 - Video Background -->
         <div class="hero-slide active">
-            <div class="hero-slide-bg" style="background-image: url('images/portfolio/slide01.jpg');"></div>
+            <div class="hero-video-bg">
+                <iframe
+                    id="heroVideo"
+                    src="https://www.youtube.com/embed/niObJdjpbS4?autoplay=1&mute=1&loop=1&playlist=niObJdjpbS4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="eager">
+                </iframe>
+                <div class="video-overlay"></div>
+            </div>
             <div class="hero-content">
                 <div class="container">
                     <div class="hero-content-inner fade-in-up">
@@ -554,5 +564,64 @@
 
     <!-- Enhanced JavaScript -->
     <script src="js/oftop-enhanced.js"></script>
+
+    <!-- Video Background Styles -->
+    <style>
+    .hero-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .hero-video-bg iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw; /* 16:9 aspect ratio */
+        min-height: 100vh;
+        min-width: 177.77vh; /* 16:9 aspect ratio */
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(27, 42, 71, 0.6) 0%, rgba(27, 42, 71, 0.4) 100%);
+        z-index: 1;
+    }
+
+    /* Ensure content is above video */
+    .hero-slide .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Mobile optimization - pause video on small screens */
+    @media (max-width: 768px) {
+        .hero-video-bg iframe {
+            display: none;
+        }
+
+        /* Fallback background image for mobile */
+        .hero-slide.active .hero-video-bg {
+            background-image: url('images/portfolio/slide01.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-slide.active .video-overlay {
+            background: linear-gradient(135deg, rgba(27, 42, 71, 0.75) 0%, rgba(27, 42, 71, 0.6) 100%);
+        }
+    }
+    </style>
 </body>
 </html>
