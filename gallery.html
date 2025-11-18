@@ -1,444 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery - View photos of GUHA Promoters residential projects and properties in Coimbatore including villas, apartments, and completed developments.">
+    <meta name="author" content="GUHA Promoters">
     <link rel="icon" href="images/favicon.ico">
 
-    <title>GUHA PROMOTERS</title>
+    <title>Gallery - GUHA PROMOTERS</title>
 
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/headhesive.css">	
-    <link type="text/css" rel="stylesheet" media="all" href="css/mmenu.css" />	
-	
-  </head>
-  
-  <body>
-  
-  <!-- start wrapper -->
-  <div class="wrapper">  
- 
- <!-- start topbar -->
-  <div class="topbar">
-    <div class="container">
-	  <div class="row">
-	    <div class="col-md-6">
-		  <ul class="top-contact">
-		    <li><i class="fa fa-phone"></i>+91-9366624545</li>
-		    <li><i class="fa fa-envelope"></i><a href="mailto:info@guhapromoters.com">info@guhapromoters.com</a></li>
-		  </ul>
-	    </div>
-	    	
-	  </div>
-	</div>
-  </div>
-  <!-- end topbar -->
-  
-  <!-- start header -->
-  <header class="banner">
-  
-    <div class="container">
-	
-	  <div class="row">
-	  
-	    <div class="col-md-4">
-		
-          <div class="responsive-menu">
-            <a href="#menu"><i class="fa fa-bars"></i></a>
-          </div><!-- /.responsive-menu -->	
-		  
-		  <a class="logo" href="index.html">
-		    <img src="images/logo.png" alt="" />
-		  </a><!-- /.logo -->
-		  
-		</div><!-- /.col-md-4 -->
-		
-		<div class="col-md-8">
-		  
-	      <!-- start responsive nav -->
-          <nav id="menu">
-		    <ul>
-		      <li><a class="current" href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-		      <li><a href="#">Projects</a>
-		        <ul class="sub-menu">
-				  <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
-			      <li><a href="projects-completed.html">Completed Projects</a></li>
-		        </ul>
-		      </li>
-		      <li><a href="gallery.html">Gallery</a></li>			  
-			  <li><a href="contact.html">Contact</a></li>
-		    </ul>
-          </nav>
-	      <!-- end responsive nav -->	
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-	      <!-- start nav -->
-	      <nav>
-		    <ul class="menu">
-		      <li><a class="current" href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-		      <li><a href="#">Projects</a>
-		        <ul class="sub-menu">
-				  <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
-			      <li><a href="projects-completed.html">Completed Projects</a></li>
-		        </ul>
-		      </li>
-		      <li><a href="gallery.html">Gallery</a></li>			  
-			  <li><a href="contact.html">Contact</a></li>		 
-		    </ul>
-          </nav>
-	      <!-- end nav -->
-		  
-		</div><!-- /.col-md-8 -->
-		
-	  </div><!-- /.row -->
-	  
-	</div><!-- /.container -->
-	
-  </header>
-  <!-- end header -->
-  
-  <!-- start content-wrapper -->
-  <div class="content-wrapper">
-  
-    <!-- start page-title -->
-    <div class="page-title">
-	  <div class="container">
-	    <div class="row">
-		  <div class="col-md-12">
-            <h3>Gallery</h3>
-		  </div><!-- /.col-md-12 --> 
-		  
-	    </div><!-- /.row --> 
-	  </div><!-- /.container --> 
-    </div>
-    <!-- end page-title -->  
-	
-    <a id="showHere"></a>		
-  
-    <div class="container">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-            <!-- DEMO -->
-			<div class="row">
-                 
-                    
-                </nav>
-			</div>
+    <!-- Modern Styles -->
+    <link href="css/modern-style.css" rel="stylesheet">
 
-			<div class="row portfolio">
-			
-				<div class="entry photo">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work7.jpg">
-					<img src="images/portfolio/work1.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>
-				  
-				  
-				<div class="entry photo">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work8.jpg">
-					<img src="images/portfolio/work2.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>
-				  
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
 
-				<div class="entry photo">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work9.jpg">
-					<img src="images/portfolio/work3.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>
-				  
-				<div class="entry photo">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work10.jpg">
-					<img src="images/portfolio/work4.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>
-				  
-				  
-				<div class="entry photo">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work11.jpg">
-					<img src="images/portfolio/work5.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>
-				  
-				<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work12.jpg">
-					<img src="images/portfolio/work6.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            aspect-ratio: 4/3;
+        }
 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work13.jpg">
-					<img src="images/portfolio/work13.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work14.jpg">
-					<img src="images/portfolio/work14.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work115.jpg">
-					<img src="images/portfolio/work15.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work16.jpg">
-					<img src="images/portfolio/work16.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work17.jpg">
-					<img src="images/portfolio/work17.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div>  
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work20.jpg">
-					<img src="images/portfolio/work20.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-<div class="entry photo ">
-                    <a data-rel="prettyPhoto" href="images/portfolio/work21.jpg">
-					<img src="images/portfolio/work21.jpg" alt="">
-					<span class="magnifier"></span>
-                    </a>
-				</div> 
-				
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
 
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
 
-			</div><!-- /.row -->
-			
-            <!-- END DEMO -->
-                <div class="clearfix"></div>
-	
-	</div><!-- /.container -->
-	
-  </div>
-  <!-- end content-wrapper -->
-  
- <!-- start footer -->    
-  <footer class="footer" style="margin: 0;">
-  
-    <div class="footer-top">
-	
-	  <div class="container">
-	  
-	    <div class="row">
-		
-		  <div class="col-md-6 widget">
-            <h3 class="widget-title">Menu</h3>
-            <ul>
-              <li><a class="current" href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-			  <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
-			  <li><a href="projects-completed">Completed Projects</a></li>
-		      <li><a href="gallery.html">Gallery</a></li>			  
-			  <li><a href="contact.html">Contact</a></li>
-            </ul>		  
-		  </div><!-- /.col-md-6 -->
-		  
-		  <div class="col-md-6 widget">
-		  
-            <h3 class="widget-title">Contact Info</h3>		
-            <ul class="footer-contact" style="margin-bottom: 15px;">
-              <li class="contact-address">
-                <i class="fa fa-map-marker"></i>
-                <span>2/57-V, Sri Ram Illam, </br>Athipalayam Post, Coimbatore</span>
-              </li>
-              <li class="contact-mail">
-                <i class="fa fa-envelope"></i>
-                <a class="link" href="mailto:info@guhapromoters.com">info@guhapromoters.com</a>
-              </li>
-              <li class="contact-phone">
-                <i class="fa fa-phone"></i>
-                <span> +91-9366624545</span>
-              </li>
-            </ul>
-			
-		  </div><!-- /.col-md-3 -->	
-		  
-	    </div><!-- /.row -->
-		
-	  </div><!-- /.container -->
-	  
-	</div><!-- /.footer-top -->
-	
-	<div class="footer-bottom">
-	
-	  <div class="container">
-	  
-	    <div class="row">
-		
-		  <div class="col-md-6">
-		   <p>Copyright 2015 - <a href="http://www.graphicsolutions.in" target="_blank">GSMEDIA</a>. All Rights Reserved.</p>
-		  </div><!-- /.col-md-6 -->
-		  
-		  <div class="col-md-6">
-		    <ul class="footer-menu">
-			  <li><a href="http://graphicsolutions.in" target="_blank">Web Design : Graphic Solutions</a></li>
-			</ul><!-- /.footer-menu -->
-		  </div><!-- /.col-md-6 -->	
-		  
-		</div><!-- /.row -->
-		
-	  </div><!-- /.container -->
-	  
-	</div><!-- /.footer-bottom -->	 
-	
-  </footer>
-  <!-- end footer -->  
-  
-  </div>
-  <!-- end wrapper -->    
-  
-  
- 
-    <!-- JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	
-	<script type="text/javascript" src="js/jquery.mmenu.min.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			$('nav#menu').mmenu();
-		});
-	</script>	
-	
-    <script type="text/javascript" src="js/headhesive.js"></script>
-    <script>
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
 
-        // Set options
-        var options = {
-            offset: '#showHere',
-            classes: {
-                clone:   'banner--clone',
-                stick:   'banner--stick',
-                unstick: 'banner--unstick'
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            color: white;
+            font-size: 2rem;
+            transform: translateY(20px);
+            transition: transform var(--transition-base);
+        }
+
+        .gallery-item:hover .gallery-icon {
+            transform: translateY(0);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
             }
-        };
 
-        // Initialise with options
-        var banner = new Headhesive('.banner', options);
+            .lightbox-nav,
+            .lightbox-close {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
 
-        // Headhesive destroy
-        // banner.destroy();
-    </script>		
-	
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>	
-<script>
-//prettyPhoto 
-jQuery(document).ready(function(){
-	jQuery('a[data-gal]').each(function() {
-	    jQuery(this).attr('rel', jQuery(this).data('gal'));
-	});  	
-	jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',slideshow:false,overlay_gallery: false,social_tools:false,deeplinking:false});
-}); 
-</script>
+<body>
+    <!-- Top Bar -->
+    <div class="modern-topbar">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 2rem;">
+                    <a href="tel:+919366624545">
+                        <i class="fa fa-phone"></i>+91-9366624545
+                    </a>
+                    <a href="mailto:info@guhapromoters.com">
+                        <i class="fa fa-envelope"></i>info@guhapromoters.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <!-- Modern Navigation -->
+    <nav class="modern-nav" id="mainNav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="GUHA Promoters Logo">
+            </a>
 
-<script>
-//Portfolio
-	var $container = $('.portfolio');
-	$container.isotope({
-		filter: '*',
-		animationOptions: {
-			duration: 750,
-			easing: 'linear',
-			queue: false,
-		}
-	});
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
 
-	$('nav.primary ul a').click(function(){
-		var selector = $(this).attr('data-filter');
-		$container.isotope({
-			filter: selector,
-			animationOptions: {
-				duration: 750,
-				easing: 'linear',
-				queue: false,
-			}
-		});
-	  return false;
-	});
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                <li><a href="projects-completed.html">Completed Projects</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-	var $optionSets = $('nav.primary ul'),
-	       $optionLinks = $optionSets.find('a');
-	 
-	       $optionLinks.click(function(){
-	          var $this = $(this);
-		  // don't proceed if already selected
-		  if ( $this.hasClass('selected') ) {
-		      return false;
-		  }
-	   var $optionSet = $this.parents('nav.primary ul');
-	   $optionSet.find('.selected').removeClass('selected');
-	   $this.addClass('selected'); 
-	});
-</script>
+    <!-- Page Header -->
+    <section style="background: linear-gradient(135deg, #1e3a5f, #2c5282); padding: 4rem 0; text-align: center; color: white;">
+        <div class="container">
+            <h1 style="color: white;">Gallery</h1>
+            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; max-width: 700px; margin: 1rem auto 0;">Explore our beautiful projects and properties across Coimbatore</p>
+        </div>
+    </section>
 
- 	
-    <!-- Camera Slider -->	
-    <script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
-    <script type='text/javascript' src='js/camera.min.js'></script> 
-	
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Work</div>
+                <h2 class="section-title">Project Showcase</h2>
+                <p class="section-description">Browse through our collection of completed and ongoing projects</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-image="images/portfolio/slide01.jpg">
+                    <img src="images/portfolio/slide01.jpg" alt="GUHA Promoters Property Gallery Image 1">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/slide02.jpg">
+                    <img src="images/portfolio/slide02.jpg" alt="GUHA Promoters Property Gallery Image 2">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/slide03.jpg">
+                    <img src="images/portfolio/slide03.jpg" alt="GUHA Promoters Property Gallery Image 3">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/guha_fantacy.jpg">
+                    <img src="images/portfolio/guha_fantacy.jpg" alt="GUHA Promoters Guha Fantasy Project">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/gallery-02-07-255x170.jpg">
+                    <img src="images/portfolio/gallery-02-07-255x170.jpg" alt="GUHA Promoters Property Gallery Image 5">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/gallery-02-06-255x170.jpg">
+                    <img src="images/portfolio/gallery-02-06-255x170.jpg" alt="GUHA Promoters Property Gallery Image 6">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/banner.jpg">
+                    <img src="images/portfolio/banner.jpg" alt="GUHA Promoters Property Gallery Image 7">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/services-300x200.jpg">
+                    <img src="images/portfolio/services-300x200.jpg" alt="GUHA Promoters Services">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-image="images/portfolio/guha.jpg">
+                    <img src="images/portfolio/guha.jpg" alt="GUHA Promoters Logo">
+                    <div class="gallery-overlay">
+                        <i class="fa fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: linear-gradient(135deg, #1e3a5f, #2c5282); padding: 4rem 0;">
+        <div class="container">
+            <div style="text-align: center; color: white; max-width: 800px; margin: 0 auto;">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Interested in Our Projects?</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; margin-bottom: 2rem;">Contact us today to schedule a site visit or learn more about our properties.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">Contact Us</a>
+                    <a href="projects-ongoing.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">
+            <i class="fa fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Gallery Image">
+        </div>
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h3>About GUHA Promoters</h3>
+                    <p>Leading real estate developers in Coimbatore, committed to building quality homes with world-class amenities and exceptional service.</p>
+                </div>
+
+                <div class="footer-widget">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                        <li><a href="projects-completed.html">Completed Projects</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>2/57-V, Sri Ram Illam,<br>Athipalayam Post, Coimbatore</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:info@guhapromoters.com">info@guhapromoters.com</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:+919366624545">+91-9366624545</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2015 - <a href="http://www.graphicsolutions.in" target="_blank">GSMEDIA</a>. All Rights Reserved. | Web Design: <a href="http://graphicsolutions.in" target="_blank">Graphic Solutions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-		jQuery(function(){
-			
-			jQuery('#camera_wrap_3').camera({
-	            height: '25%',
-            	pagination: false,
-				thumbnails: false,
-				loader: 'none'
-			});
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
 
-		});
-	</script>
-	
-	<script>
-$('.collapse').live('show', function(){
-    $(this).parent().find('a').addClass('open'); //add active state to button on open
-});
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
 
-$('.collapse').live('hide', function(){
-    $(this).parent().find('a').removeClass('open'); //remove active state to button on close
-});
-	</script>
-	
-	<script>
-$(window).ready(function(e){
-      $.each($('div.progress-bar'),function(){
-        $(this).css('width', $(this).attr('aria-valuetransitiongoal')+'%');
-      });
-});
+        // Sticky Navigation
+        const nav = document.getElementById('mainNav');
+        let lastScroll = 0;
 
-jQuery('.accordions .panel-heading a[data-toggle="collapse"]').on('click', function () {   
-    jQuery('.accordions .panel-heading a[data-toggle="collapse"]').removeClass('actives');
-    $(this).addClass('actives');
- });
-	</script>
-	
-<!-- DEMO JS -->
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
 
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
 
-<!-- END DEMO JS -->
-	
-  </body>
+            lastScroll = currentScroll;
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
+
+        // Open lightbox
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                showImage(currentIndex);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Show image
+        function showImage(index) {
+            const imageSrc = galleryItems[index].getAttribute('data-image');
+            lightboxImage.src = imageSrc;
+        }
+
+        // Previous image
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showImage(currentIndex);
+        });
+
+        // Next image
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            showImage(currentIndex);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                showImage(currentIndex);
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                showImage(currentIndex);
+            }
+        });
+    </script>
+</body>
 </html>
