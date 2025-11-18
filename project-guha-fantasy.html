@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUHA Fantasy - Affordable Modern Living | GUHA Promoters</title>
+    <meta name="description" content="GUHA Fantasy offers modern 2 & 3 BHK apartments at affordable prices. Experience contemporary living with excellent amenities. Price starting from ₹55 Lakhs.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- GLightbox for Image Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Property Details Specific Styles */
+        .property-hero {
+            background: linear-gradient(135deg, var(--color-navy) 0%, #2A3F5F 100%);
+            padding: var(--space-20) 0 var(--space-16);
+            margin-top: 80px;
+            color: white;
+        }
+
+        .property-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .property-badge {
+            display: inline-block;
+            background: #27AE60;
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+
+        .property-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: var(--font-heading);
+            margin-bottom: var(--space-4);
+            color: white;
+        }
+
+        .property-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-8);
+            margin-top: var(--space-6);
+            padding-top: var(--space-6);
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .property-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .property-meta-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--color-terracotta);
+        }
+
+        .property-meta-info h4 {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: var(--space-1);
+            font-weight: 400;
+        }
+
+        .property-meta-info p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+        }
+
+        /* Image Gallery */
+        .property-gallery {
+            padding: var(--space-16) 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:first-child {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(27, 42, 71, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Overview Section */
+        .property-overview {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-12);
+            margin-top: var(--space-10);
+        }
+
+        .overview-content h3 {
+            font-size: 1.75rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-4);
+            font-family: var(--font-heading);
+        }
+
+        .overview-content p {
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: var(--space-4);
+        }
+
+        .overview-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .overview-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--color-cream);
+            border-radius: 8px;
+        }
+
+        .overview-feature i {
+            font-size: 1.5rem;
+            color: var(--color-terracotta);
+        }
+
+        .overview-feature span {
+            font-weight: 500;
+            color: var(--color-navy);
+        }
+
+        /* Sidebar */
+        .property-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: var(--space-6);
+        }
+
+        .sidebar-price {
+            font-size: 2rem;
+            color: var(--color-terracotta);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+
+        .sidebar-price-label {
+            font-size: 0.875rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-6);
+        }
+
+        .sidebar-info {
+            border-top: 1px solid var(--color-cream);
+            border-bottom: 1px solid var(--color-cream);
+            padding: var(--space-4) 0;
+            margin-bottom: var(--space-6);
+        }
+
+        .sidebar-info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-3);
+        }
+
+        .sidebar-info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-info-label {
+            color: var(--color-text);
+            font-size: 0.875rem;
+        }
+
+        .sidebar-info-value {
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .sidebar-cta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .sidebar-progress {
+            margin-top: var(--space-6);
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-2);
+            font-size: 0.875rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--color-cream);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-terracotta) 0%, #E08B6F 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Specifications */
+        .property-specs {
+            padding: var(--space-16) 0;
+            background: var(--color-cream);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-10);
+        }
+
+        .spec-card {
+            background: white;
+            padding: var(--space-6);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .spec-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--color-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-4);
+            font-size: 2rem;
+            color: var(--color-terracotta);
+        }
+
+        .spec-card h4 {
+            font-size: 1.125rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-2);
+        }
+
+        .spec-card p {
+            color: var(--color-text);
+            font-size: 0.9375rem;
+        }
+
+        /* Amenities */
+        .property-amenities {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-10);
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--color-cream);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            background: var(--color-terracotta);
+            color: white;
+        }
+
+        .amenity-item i {
+            font-size: 1.25rem;
+            color: var(--color-terracotta);
+            transition: color 0.3s ease;
+        }
+
+        .amenity-item:hover i {
+            color: white;
+        }
+
+        .amenity-item span {
+            font-weight: 500;
+        }
+
+        /* Floor Plans */
+        .property-floorplans {
+            padding: var(--space-16) 0;
+            background: var(--color-cream);
+        }
+
+        .floorplan-tabs {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+            flex-wrap: wrap;
+        }
+
+        .floorplan-tab {
+            padding: var(--space-3) var(--space-6);
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--color-navy);
+        }
+
+        .floorplan-tab.active {
+            background: var(--color-terracotta);
+            color: white;
+            border-color: var(--color-terracotta);
+        }
+
+        .floorplan-content {
+            display: none;
+            background: white;
+            padding: var(--space-8);
+            border-radius: 12px;
+        }
+
+        .floorplan-content.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+        }
+
+        .floorplan-image {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .floorplan-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .floorplan-details h4 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-4);
+        }
+
+        .floorplan-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .floorplan-spec {
+            padding: var(--space-4);
+            background: var(--color-cream);
+            border-radius: 8px;
+        }
+
+        .floorplan-spec-label {
+            font-size: 0.875rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-1);
+        }
+
+        .floorplan-spec-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .floorplan-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .floorplan-features li {
+            padding: var(--space-2) 0;
+            padding-left: var(--space-6);
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .floorplan-features li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--color-terracotta);
+        }
+
+        /* Location */
+        .property-location {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            margin-top: var(--space-10);
+        }
+
+        .location-map {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .location-nearby h4 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-6);
+        }
+
+        .nearby-places {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .nearby-place {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-4);
+            background: var(--color-cream);
+            border-radius: 8px;
+        }
+
+        .nearby-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--color-terracotta);
+        }
+
+        .nearby-info h5 {
+            font-size: 1rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-1);
+        }
+
+        .nearby-distance {
+            font-size: 0.875rem;
+            color: var(--color-text);
+        }
+
+        /* Contact Form */
+        .property-contact {
+            padding: var(--space-16) 0;
+            background: var(--color-cream);
+        }
+
+        .contact-form-wrapper {
+            max-width: 800px;
+            margin: var(--space-10) auto 0;
+            background: white;
+            padding: var(--space-10);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: var(--space-2);
+            color: var(--color-navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: var(--space-3) var(--space-4);
+            border: 2px solid var(--color-cream);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-terracotta);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Similar Projects */
+        .similar-projects {
+            padding: var(--space-16) 0;
+            background: white;
+        }
+
+        .similar-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-10);
+        }
+
+        .similar-project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .similar-project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .similar-project-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .similar-project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .similar-project-card:hover .similar-project-image img {
+            transform: scale(1.05);
+        }
+
+        .similar-project-badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--color-terracotta);
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .similar-project-content {
+            padding: var(--space-6);
+        }
+
+        .similar-project-title {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: var(--space-3);
+        }
+
+        .similar-project-location {
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+
+        .similar-project-meta {
+            display: flex;
+            gap: var(--space-6);
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .similar-project-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--color-text);
+            font-size: 0.875rem;
+        }
+
+        .similar-project-meta-item i {
+            color: var(--color-terracotta);
+        }
+
+        .similar-project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .similar-project-price {
+            font-size: 1.5rem;
+            color: var(--color-terracotta);
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-sidebar {
+                position: static;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floorplan-content.active {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .property-hero-meta {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+
+            .overview-features {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .similar-projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="GUHA Promoters" class="logo">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Projects</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                                <li><a href="projects-completed.html">Completed Projects</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Property Hero -->
+    <section class="property-hero">
+        <div class="property-hero-content">
+            <div data-aos="fade-up">
+                <span class="property-badge">Launching Soon</span>
+                <h1>GUHA Fantasy</h1>
+                <p style="font-size: 1.125rem; margin-top: var(--space-4); opacity: 0.9;">Discover affordable modern living with our well-designed 2 & 3 BHK apartments in the growing West City District. Perfect for first-time homebuyers and young families.</p>
+            </div>
+
+            <div class="property-hero-meta">
+                <div class="property-meta-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-meta-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="property-meta-info">
+                        <h4>Starting Price</h4>
+                        <p>₹55 Lakhs</p>
+                    </div>
+                </div>
+
+                <div class="property-meta-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-meta-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="property-meta-info">
+                        <h4>Property Type</h4>
+                        <p>Residential Apartments</p>
+                    </div>
+                </div>
+
+                <div class="property-meta-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="property-meta-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="property-meta-info">
+                        <h4>Location</h4>
+                        <p>West City District</p>
+                    </div>
+                </div>
+
+                <div class="property-meta-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="property-meta-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="property-meta-info">
+                        <h4>Expected Launch</h4>
+                        <p>June 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="property-gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <a href="images/portfolio/guha_fantasy1.jpg" class="gallery-item glightbox" data-aos="fade-up">
+                    <img src="images/portfolio/guha_fantasy1.jpg" alt="GUHA Fantasy Main View" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </a>
+
+                <a href="images/portfolio/guha_fanatacy2.jpg" class="gallery-item glightbox" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/portfolio/guha_fanatacy2.jpg" alt="GUHA Fantasy Interior" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </a>
+
+                <a href="images/portfolio/guha_fantacy.jpg" class="gallery-item glightbox" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/portfolio/guha_fantacy.jpg" alt="GUHA Fantasy Amenities" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </a>
+
+                <a href="images/portfolio/guha_fantasy1.jpg" class="gallery-item glightbox" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/portfolio/guha_fantasy1.jpg" alt="GUHA Fantasy Exterior" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </a>
+
+                <a href="images/portfolio/guha_fanatacy2.jpg" class="gallery-item glightbox" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/portfolio/guha_fanatacy2.jpg" alt="GUHA Fantasy Community" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Overview -->
+    <section class="property-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <div data-aos="fade-up">
+                        <h3>About GUHA Fantasy</h3>
+                        <p>GUHA Fantasy is designed to make homeownership dreams come true with affordable, modern apartments in the rapidly developing West City District. This thoughtfully planned project offers 2 & 3 BHK configurations perfect for first-time buyers and growing families.</p>
+
+                        <p>Spread across 2.5 acres, GUHA Fantasy features 120 contemporary apartments across 8 floors. The project focuses on delivering quality construction, essential amenities, and excellent connectivity at an attractive price point.</p>
+
+                        <p>Launching in June 2025, this is an excellent opportunity to invest in a prime location at pre-launch pricing. With our proven track record of timely delivery and quality construction, GUHA Fantasy promises to be your ideal home.</p>
+                    </div>
+
+                    <div class="overview-features" data-aos="fade-up" data-aos-delay="100">
+                        <div class="overview-feature">
+                            <i class="fas fa-building"></i>
+                            <span>8 Floors</span>
+                        </div>
+                        <div class="overview-feature">
+                            <i class="fas fa-home"></i>
+                            <span>120 Units</span>
+                        </div>
+                        <div class="overview-feature">
+                            <i class="fas fa-tree"></i>
+                            <span>2.5 Acres</span>
+                        </div>
+                        <div class="overview-feature">
+                            <i class="fas fa-car"></i>
+                            <span>Covered Parking</span>
+                        </div>
+                        <div class="overview-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>24/7 Security</span>
+                        </div>
+                        <div class="overview-feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Eco-Friendly Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-sidebar">
+                    <div class="sidebar-card" data-aos="fade-up">
+                        <div class="sidebar-price">₹55 Lakhs</div>
+                        <div class="sidebar-price-label">Starting Price (onwards)</div>
+
+                        <div class="sidebar-info">
+                            <div class="sidebar-info-item">
+                                <span class="sidebar-info-label">Property Type</span>
+                                <span class="sidebar-info-value">Apartments</span>
+                            </div>
+                            <div class="sidebar-info-item">
+                                <span class="sidebar-info-label">Configurations</span>
+                                <span class="sidebar-info-value">2, 3 BHK</span>
+                            </div>
+                            <div class="sidebar-info-item">
+                                <span class="sidebar-info-label">Area Range</span>
+                                <span class="sidebar-info-value">1,000 - 1,800 sq.ft</span>
+                            </div>
+                            <div class="sidebar-info-item">
+                                <span class="sidebar-info-label">Status</span>
+                                <span class="sidebar-info-value">Launching Soon</span>
+                            </div>
+                            <div class="sidebar-info-item">
+                                <span class="sidebar-info-label">Launch Date</span>
+                                <span class="sidebar-info-value">June 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-cta">
+                            <a href="#contact-form" class="btn btn-primary">Register Interest</a>
+                            <a href="contact.html" class="btn btn-outline">Download Brochure</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4 style="color: var(--color-navy); margin-bottom: var(--space-4);">Pre-Launch Offer</h4>
+                        <p style="color: var(--color-text); margin-bottom: var(--space-4); font-size: 0.875rem;">Register now to get exclusive pre-launch pricing and priority booking.</p>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                            <a href="tel:+919876543210" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-terracotta); font-weight: 600;">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 98765 43210</span>
+                            </a>
+                            <a href="mailto:info@guhapromoters.com" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-terracotta); font-weight: 600;">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@guhapromoters.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="property-specs">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Specifications & Features</h2>
+                <p>Quality materials and modern finishes</p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="spec-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h4>Flooring</h4>
+                    <p>Vitrified tiles in all rooms, Anti-skid ceramic tiles in bathrooms</p>
+                </div>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="spec-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h4>Walls & Ceiling</h4>
+                    <p>OBD finish, Premium emulsion paint on walls and ceiling</p>
+                </div>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="spec-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h4>Doors & Windows</h4>
+                    <p>Engineered wood frames, UPVC windows with grills</p>
+                </div>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="spec-icon">
+                        <i class="fas fa-sink"></i>
+                    </div>
+                    <h4>Kitchen</h4>
+                    <p>Granite platform, SS sink, Ceramic tiles dado</p>
+                </div>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="spec-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h4>Bathrooms</h4>
+                    <p>Wall tiles up to 7 feet, Quality sanitary fittings</p>
+                </div>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="spec-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Electrical</h4>
+                    <p>Concealed wiring, Modular switches, Power points</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="property-amenities">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Essential Amenities</h2>
+                <p>Everything you need for comfortable living</p>
+            </div>
+
+            <div class="amenities-grid">
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Gymnasium</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-child"></i>
+                    <span>Children's Play Area</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-tree"></i>
+                    <span>Landscaped Gardens</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-car"></i>
+                    <span>Covered Parking</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>24/7 Security</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-video"></i>
+                    <span>CCTV Surveillance</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-bolt"></i>
+                    <span>Power Backup</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-water"></i>
+                    <span>24/7 Water Supply</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <span>Fire Safety</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-elevator"></i>
+                    <span>Elevators</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-recycle"></i>
+                    <span>Waste Management</span>
+                </div>
+
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-leaf"></i>
+                    <span>Rainwater Harvesting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plans -->
+    <section class="property-floorplans">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Floor Plans</h2>
+                <p>Efficient 2 & 3 BHK layouts</p>
+            </div>
+
+            <div class="floorplan-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="floorplan-tab active" data-tab="2bhk">2 BHK</button>
+                <button class="floorplan-tab" data-tab="3bhk">3 BHK</button>
+            </div>
+
+            <div class="floorplan-content active" id="2bhk" data-aos="fade-up">
+                <div class="floorplan-image">
+                    <img src="images/portfolio/guha_fantasy1.jpg" alt="2 BHK Floor Plan" loading="lazy">
+                </div>
+                <div class="floorplan-details">
+                    <h4>2 BHK Apartment</h4>
+                    <div class="floorplan-specs">
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Carpet Area</div>
+                            <div class="floorplan-spec-value">1,000 sq.ft</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Bedrooms</div>
+                            <div class="floorplan-spec-value">2</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Bathrooms</div>
+                            <div class="floorplan-spec-value">2</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Balconies</div>
+                            <div class="floorplan-spec-value">2</div>
+                        </div>
+                    </div>
+                    <h5 style="color: var(--color-navy); margin-bottom: var(--space-3);">Features:</h5>
+                    <ul class="floorplan-features">
+                        <li>Open living and dining area</li>
+                        <li>Master bedroom with attached bathroom</li>
+                        <li>Modular kitchen</li>
+                        <li>Good natural light and ventilation</li>
+                        <li>Efficient use of space</li>
+                    </ul>
+                    <div style="margin-top: var(--space-6);">
+                        <a href="contact.html" class="btn btn-primary">Request Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floorplan-content" id="3bhk" data-aos="fade-up">
+                <div class="floorplan-image">
+                    <img src="images/portfolio/guha_fanatacy2.jpg" alt="3 BHK Floor Plan" loading="lazy">
+                </div>
+                <div class="floorplan-details">
+                    <h4>3 BHK Apartment</h4>
+                    <div class="floorplan-specs">
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Carpet Area</div>
+                            <div class="floorplan-spec-value">1,800 sq.ft</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Bedrooms</div>
+                            <div class="floorplan-spec-value">3</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Bathrooms</div>
+                            <div class="floorplan-spec-value">3</div>
+                        </div>
+                        <div class="floorplan-spec">
+                            <div class="floorplan-spec-label">Balconies</div>
+                            <div class="floorplan-spec-value">3</div>
+                        </div>
+                    </div>
+                    <h5 style="color: var(--color-navy); margin-bottom: var(--space-3);">Features:</h5>
+                    <ul class="floorplan-features">
+                        <li>Spacious living and dining areas</li>
+                        <li>Master bedroom with ensuite</li>
+                        <li>Large modular kitchen</li>
+                        <li>Three balconies</li>
+                        <li>Utility area</li>
+                        <li>Well-planned layout</li>
+                    </ul>
+                    <div style="margin-top: var(--space-6);">
+                        <a href="contact.html" class="btn btn-primary">Request Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="property-location">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Strategic Location</h2>
+                <p>Well-connected to key areas of the city</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-map" data-aos="fade-up">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5396847457397!2d77.5852!3d12.9389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzIwLjAiTiA3N8KwMzUnMDYuNyJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="location-nearby" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Nearby Landmarks</h4>
+                    <div class="nearby-places">
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Community Hospital</h5>
+                                <div class="nearby-distance">1.5 km away</div>
+                            </div>
+                        </div>
+
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Public School</h5>
+                                <div class="nearby-distance">800 m away</div>
+                            </div>
+                        </div>
+
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Shopping Center</h5>
+                                <div class="nearby-distance">2.0 km away</div>
+                            </div>
+                        </div>
+
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Bus Stop</h5>
+                                <div class="nearby-distance">300 m away</div>
+                            </div>
+                        </div>
+
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Business Park</h5>
+                                <div class="nearby-distance">5.5 km away</div>
+                            </div>
+                        </div>
+
+                        <div class="nearby-place">
+                            <div class="nearby-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="nearby-info">
+                                <h5>Restaurants & Cafes</h5>
+                                <div class="nearby-distance">500 m away</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="property-contact" id="contact-form">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Register Your Interest</h2>
+                <p>Be the first to know about pre-launch offers and exclusive pricing</p>
+            </div>
+
+            <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <form id="propertyInquiryForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="configuration">Interested Configuration</label>
+                            <select id="configuration" name="configuration">
+                                <option value="">Select Configuration</option>
+                                <option value="2bhk">2 BHK</option>
+                                <option value="3bhk">3 BHK</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Projects -->
+    <section class="similar-projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Other Projects</h2>
+                <p>Explore our other residential developments</p>
+            </div>
+
+            <div class="similar-projects-grid">
+                <div class="similar-project-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="similar-project-image">
+                        <img src="images/portfolio/guha_fantacy.jpg" alt="GUHA Residency" loading="lazy">
+                        <span class="similar-project-badge">Under Construction</span>
+                    </div>
+                    <div class="similar-project-content">
+                        <h3 class="similar-project-title">GUHA Residency</h3>
+                        <div class="similar-project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Prime City Center</span>
+                        </div>
+                        <div class="similar-project-meta">
+                            <div class="similar-project-meta-item">
+                                <i class="fas fa-bed"></i>
+                                <span>2, 3, 4 BHK</span>
+                            </div>
+                            <div class="similar-project-meta-item">
+                                <i class="fas fa-vector-square"></i>
+                                <span>1,200 - 2,800 sq.ft</span>
+                            </div>
+                        </div>
+                        <div class="similar-project-footer">
+                            <div class="similar-project-price">₹65L</div>
+                            <a href="project-guha-residency.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="similar-project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="similar-project-image">
+                        <img src="images/portfolio/guha_fanatacy2.jpg" alt="GUHA Elite" loading="lazy">
+                        <span class="similar-project-badge">Launching Soon</span>
+                    </div>
+                    <div class="similar-project-content">
+                        <h3 class="similar-project-title">GUHA Elite</h3>
+                        <div class="similar-project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>North Business District</span>
+                        </div>
+                        <div class="similar-project-meta">
+                            <div class="similar-project-meta-item">
+                                <i class="fas fa-bed"></i>
+                                <span>3, 4 BHK</span>
+                            </div>
+                            <div class="similar-project-meta-item">
+                                <i class="fas fa-vector-square"></i>
+                                <span>1,800 - 3,200 sq.ft</span>
+                            </div>
+                        </div>
+                        <div class="similar-project-footer">
+                            <div class="similar-project-price">₹95L</div>
+                            <a href="project-guha-elite.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="images/logo.png" alt="GUHA Promoters">
+                        </div>
+                        <p class="footer-desc">Building dreams, creating landmarks. Your trusted partner in real estate development with over 30 years of excellence.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                            <li><a href="projects-completed.html">Completed Projects</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="investment-advisory.html">Investment Advisory</a></li>
+                            <li><a href="turnkey-solutions.html">Turnkey Solutions</a></li>
+                            <li><a href="services.html">Property Management</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Business District, City Name, State - 560001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+91 98765 43210</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@guhapromoters.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 GUHA Promoters. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize GLightbox
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            loop: true
+        });
+
+        // Floor Plan Tabs
+        document.querySelectorAll('.floorplan-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.floorplan-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.floorplan-content').forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('propertyInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering your interest! Our team will contact you shortly with pre-launch offers.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
