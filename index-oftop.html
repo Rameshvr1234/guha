@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GUHA Promoters - Leading real estate builders and developers in Coimbatore offering quality residential villas, individual homes, and properties with world-class amenities.">
+    <meta name="author" content="GUHA Promoters">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>GUHA PROMOTERS - Premium Real Estate in Coimbatore</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Oftop Design System -->
+    <link href="css/oftop-design-system.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Bar (Dark Navy) -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="top-bar-info">
+                <span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    2/57-V, Sri Ram Illam, Athipalayam Post, Coimbatore
+                </span>
+                <a href="mailto:info@guhapromoters.com">
+                    <i class="fas fa-envelope"></i>
+                    info@guhapromoters.com
+                </a>
+                <a href="tel:+919366624545">
+                    <i class="fas fa-phone"></i>
+                    +91-9366624545
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <a href="index-oftop.html" class="nav-logo">
+                <img src="images/logo.png" alt="GUHA Promoters Logo">
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index-oftop.html" class="active">Home</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="projects-ongoing.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta">
+                    <a href="contact.html" class="btn btn-primary">Schedule Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="heroSlider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+            <div class="hero-slide-bg" style="background-image: url('images/portfolio/slide01.jpg');"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-content-inner fade-in-up">
+                        <div class="hero-subtitle">Building Dreams Since 2000</div>
+                        <h1 class="hero-title">
+                            A Perfect Place to Fit<br>
+                            <span class="heading-accent">Every Lifestyle</span>
+                        </h1>
+                        <p class="hero-description">
+                            Creating real values in property and places. Welcome to a life of elegance and grace - the perfect blend of everything you desire in your dream home.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="projects-ongoing.html" class="btn btn-secondary btn-lg">Discover GUHA</a>
+                            <a href="tel:+919366624545" class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-phone"></i> +91-9366624545
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <div class="hero-slide-bg" style="background-image: url('images/portfolio/slide02.jpg');"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-content-inner">
+                        <div class="hero-subtitle">Quality Construction</div>
+                        <h1 class="hero-title">
+                            Building Dreams,<br>
+                            <span class="heading-accent">Creating Homes</span>
+                        </h1>
+                        <p class="hero-description">
+                            Experience premium living with our meticulously crafted villas and residential properties. Quality construction, timely delivery, and customer satisfaction are our priorities.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="projects-completed.html" class="btn btn-secondary btn-lg">View Projects</a>
+                            <a href="contact.html" class="btn btn-outline-white btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <div class="hero-slide-bg" style="background-image: url('images/portfolio/slide03.jpg');"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-content-inner">
+                        <div class="hero-subtitle">Trusted Developer</div>
+                        <h1 class="hero-title">
+                            20+ Years of Excellence<br>
+                            in <span class="heading-accent">Real Estate</span>
+                        </h1>
+                        <p class="hero-description">
+                            Trust, integrity, and commitment to quality. Join over 1000+ happy families who have made GUHA Promoters their choice for premium properties in Coimbatore.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="about-us.html" class="btn btn-secondary btn-lg">Learn More</a>
+                            <a href="gallery.html" class="btn btn-outline-white btn-lg">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Arrows -->
+        <button class="slider-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow next" onclick="changeSlide(1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Slider Dots -->
+        <div class="slider-controls" role="group" aria-label="Slide navigation">
+            <button class="slider-dot active" onclick="currentSlide(1)" aria-label="Go to slide 1"></button>
+            <button class="slider-dot" onclick="currentSlide(2)" aria-label="Go to slide 2"></button>
+            <button class="slider-dot" onclick="currentSlide(3)" aria-label="Go to slide 3"></button>
+        </div>
+    </section>
+
+    <!-- Service Cards Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Services</div>
+                <h2 class="section-title">What We <span class="heading-accent">Offer</span></h2>
+                <p class="section-description">Comprehensive real estate solutions tailored to your needs</p>
+            </div>
+
+            <div class="grid grid-4">
+                <!-- Service Card 1 -->
+                <div class="card card-cream">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="card-title">Residential Villas</h3>
+                    <p class="card-text">Exclusive individual villas designed for modern families seeking premium living spaces with world-class amenities.</p>
+                    <a href="projects-ongoing.html" class="btn-link">Learn More</a>
+                </div>
+
+                <!-- Service Card 2 - Featured -->
+                <div class="card card-featured">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="card-title">Property Development</h3>
+                    <p class="card-text">Complete property development services from land acquisition to project completion with guaranteed quality.</p>
+                    <a href="about-us.html" class="btn-link">Learn More</a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="card card-cream">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Investment Advisory</h3>
+                    <p class="card-text">Expert guidance on real estate investments to help you make informed decisions for maximum returns.</p>
+                    <a href="contact.html" class="btn-link">Learn More</a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="card card-cream">
+                    <div class="card-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="card-title">Turnkey Solutions</h3>
+                    <p class="card-text">Complete turnkey solutions from design to handover, ensuring a hassle-free experience for our clients.</p>
+                    <a href="projects-completed.html" class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Property Showcase (50/50 Split) -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content">
+                    <div class="section-label">Featured Project</div>
+                    <h2 class="heading-large">Guha <span class="heading-accent">Residency</span></h2>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                        Exclusive individual villas located in Saravanampatty, Athipalayam Bus stop, Coimbatore. Perfect for modern families seeking premium living with exceptional amenities and contemporary design.
+                    </p>
+                    <div class="grid grid-2" style="margin-bottom: var(--space-8); gap: var(--space-4);">
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Location</h4>
+                            <p style="margin: 0;">Saravanampatty, Coimbatore</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Property Type</h4>
+                            <p style="margin: 0;">Individual Villas</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Status</h4>
+                            <p style="margin: 0;">Ongoing</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Units</h4>
+                            <p style="margin: 0;">Limited Availability</p>
+                        </div>
+                    </div>
+                    <a href="projects-ongoing.html" class="btn btn-primary btn-lg">View Details</a>
+                </div>
+                <div class="split-image">
+                    <img src="images/portfolio/guha_fantacy.jpg" alt="Guha Residency - Luxury Villas in Coimbatore">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Featured Property (Reversed Layout) -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout split-layout-reverse">
+                <div class="split-content">
+                    <div class="section-label">Completed Project</div>
+                    <h2 class="heading-large">Guha <span class="heading-accent">Palace</span></h2>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                        Living at GUHA Palace gives you instant access to the best colleges, schools and healthcare centers. Shopping and conveniences are very close, making it an ideal choice for families.
+                    </p>
+                    <div class="grid grid-2" style="margin-bottom: var(--space-8); gap: var(--space-4);">
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Year Completed</h4>
+                            <p style="margin: 0;">2022</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Total Units</h4>
+                            <p style="margin: 0;">45 Homes</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Location</h4>
+                            <p style="margin: 0;">Athipalayam, Coimbatore</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-terracotta); margin-bottom: var(--space-2);">Satisfaction</h4>
+                            <p style="margin: 0;">100% Happy Families</p>
+                        </div>
+                    </div>
+                    <a href="projects-completed.html" class="btn btn-primary btn-lg">Explore Project</a>
+                </div>
+                <div class="split-image">
+                    <img src="images/portfolio/gallery-02-07-255x170.jpg" alt="Guha Palace - Completed Residential Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Excellence</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Happy Families</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">Building Dreams with <span class="heading-accent">Excellence</span></h2>
+                <p class="section-description">We understand that buying a home is one of the biggest decisions you'll ever make</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="card-title">Fast and Friendly</h3>
+                    <p class="card-text">We pride ourselves on being different in many positive ways that give our clients a significant edge when buying. Quick response times and dedicated support.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="card-title">Experienced Team</h3>
+                    <p class="card-text">We are active investors ourselves and so we practice and speak from personal experience. Having a heavy background in housing construction and residential plots.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="card-title">Unique Service</h3>
+                    <p class="card-text">We make sure your property benefits from the vast experience of Engineers who oversee the process from start to finish. Outstanding reputation and track record.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section section-navy">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" style="color: var(--color-terracotta);">Stay Updated</div>
+                <h2 class="section-title" style="color: var(--color-white);">
+                    Subscribe to Our <span class="heading-accent">Newsletter</span>
+                </h2>
+                <p class="section-description" style="color: rgba(255, 255, 255, 0.8);">
+                    Get the latest updates on new projects, property listings, and exclusive offers
+                </p>
+            </div>
+
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                    <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        style="flex: 1; min-width: 250px; padding: var(--space-4) var(--space-6); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-sm); background-color: rgba(255, 255, 255, 0.1); color: var(--color-white); font-size: var(--text-base);"
+                        aria-label="Email address"
+                    >
+                    <button type="submit" class="btn btn-primary btn-lg">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-cream">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <div class="section-label">Get in Touch</div>
+                <h2 class="section-title">
+                    Ready to Start Living in Your <span class="heading-accent">Dream Home?</span>
+                </h2>
+                <p style="font-size: var(--text-xl); color: var(--color-text-secondary); margin-bottom: var(--space-10);">
+                    Let us help you find the perfect property that matches your lifestyle and aspirations. Our team is ready to guide you every step of the way.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Today</a>
+                    <a href="tel:+919366624545" class="btn btn-outline btn-lg">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Footer Column 1 - About -->
+                <div class="footer-widget">
+                    <img src="images/logo.png" alt="GUHA Promoters" style="height: 50px; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+                    <p>Leading real estate developers in Coimbatore, committed to building quality homes with world-class amenities and exceptional service since 2000.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Column 2 - Services -->
+                <div class="footer-widget">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="projects-ongoing.html">Residential Villas</a></li>
+                        <li><a href="projects-completed.html">Completed Projects</a></li>
+                        <li><a href="about-us.html">Property Development</a></li>
+                        <li><a href="contact.html">Investment Advisory</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 3 - Quick Links -->
+                <div class="footer-widget">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index-oftop.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
+                        <li><a href="projects-completed.html">Completed Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 4 - Contact -->
+                <div class="footer-widget">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
+                            2/57-V, Sri Ram Illam,<br>Athipalayam Post, Coimbatore - 641 103
+                        </li>
+                        <li style="margin-top: var(--space-4);">
+                            <i class="fas fa-envelope" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
+                            <a href="mailto:info@guhapromoters.com">info@guhapromoters.com</a>
+                        </li>
+                        <li style="margin-top: var(--space-4);">
+                            <i class="fas fa-phone" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
+                            <a href="tel:+919366624545">+91-9366624545</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024 <a href="index-oftop.html">GUHA Promoters</a>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/oftop-main.js"></script>
+</body>
+</html>
