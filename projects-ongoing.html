@@ -3,296 +3,879 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ongoing Projects by GUHA Promoters - Explore Guha Fantasy and other premium residential villas in Saravanampatty, Coimbatore with world-class amenities.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore GUHA Promoters' ongoing residential projects in Coimbatore. Premium villas and individual homes under construction with world-class amenities and modern designs.">
+    <meta name="keywords" content="ongoing projects, residential villas Coimbatore, under construction homes, GUHA Residency, premium properties">
     <meta name="author" content="GUHA Promoters">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ongoing Projects - GUHA PROMOTERS">
+    <meta property="og:description" content="Discover our premium ongoing residential projects in Coimbatore with modern amenities and timely delivery.">
+    <meta property="og:image" content="images/portfolio/guha_fantacy.jpg">
+    <meta property="og:url" content="https://guhapromoters.com/projects-ongoing">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ongoing Projects - GUHA PROMOTERS">
+    <meta name="twitter:description" content="Explore premium residential projects under construction in Coimbatore.">
+    <meta name="twitter:image" content="images/portfolio/guha_fantacy.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://guhapromoters.com/projects-ongoing">
+
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
-    <title>Ongoing Projects - GUHA PROMOTERS</title>
+    <title>Ongoing Projects - GUHA PROMOTERS | Premium Villas in Coimbatore</title>
 
-    <!-- Google Fonts -->
+    <!-- Preconnect to External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Modern Styles -->
-    <link href="css/modern-style.css" rel="stylesheet">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Oftop Design System -->
+    <link href="css/oftop-design-system.css" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "GUHA Promoters",
+        "description": "Leading real estate developers in Coimbatore",
+        "url": "https://guhapromoters.com",
+        "telephone": "+91-9366624545",
+        "email": "info@guhapromoters.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2/57-V, Sri Ram Illam, Athipalayam Post",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "641103",
+            "addressCountry": "IN"
+        },
+        "areaServed": "Coimbatore",
+        "priceRange": "$$-$$$"
+    }
+    </script>
 
     <style>
-        .tabs {
+        /* Project Tabs */
+        .project-tabs {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--gray-200);
+            gap: var(--space-2);
+            border-bottom: 2px solid var(--color-cream);
+            margin-bottom: var(--space-12);
             flex-wrap: wrap;
         }
 
-        .tab {
-            padding: 1rem 2rem;
+        .project-tab {
+            padding: var(--space-4) var(--space-8);
             background: none;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            border-bottom: 3px solid transparent;
+            font-size: var(--text-lg);
             font-weight: 600;
-            color: var(--gray-600);
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-base);
             position: relative;
-            transition: all var(--transition-fast);
         }
 
-        .tab.active {
-            color: var(--primary-color);
+        .project-tab.active {
+            color: var(--color-navy);
+            border-bottom-color: var(--color-terracotta);
         }
 
-        .tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary-color);
+        .project-tab:hover {
+            color: var(--color-terracotta);
         }
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease-in;
         }
 
         .tab-content.active {
             display: block;
+            animation: fadeIn 0.5s ease-out;
         }
 
-        .amenities-list {
-            list-style: none;
+        /* Amenities Grid */
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+            margin-top: var(--space-12);
         }
 
-        .amenities-list li {
+        .amenity-item {
+            text-align: center;
+            padding: var(--space-8);
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-4);
+            background: linear-gradient(135deg, var(--color-terracotta), var(--color-terracotta-light));
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            padding: 0.75rem 1rem;
-            background: var(--gray-50);
-            border-radius: var(--radius-md);
-            font-size: 1rem;
+            justify-content: center;
+            font-size: var(--text-4xl);
+            color: var(--color-white);
         }
 
-        .amenities-list li i {
-            color: var(--primary-color);
-            margin-right: 0.75rem;
-            font-size: 1.125rem;
+        .amenity-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-navy);
+            margin-bottom: var(--space-2);
         }
 
-        .map-preview {
-            width: 100%;
+        .amenity-description {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Project Details Grid */
+        .project-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            background: var(--color-cream);
+            padding: var(--space-10);
+            border-radius: var(--radius-xl);
+            margin: var(--space-12) 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: start;
+            gap: var(--space-4);
+        }
+
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-terracotta);
             border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: var(--text-xl);
+            flex-shrink: 0;
+        }
+
+        .detail-content h4 {
+            font-size: var(--text-lg);
+            color: var(--color-navy);
+            margin-bottom: var(--space-2);
+        }
+
+        .detail-content p {
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        /* Floor Plans */
+        .floor-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .floor-plan-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
             box-shadow: var(--shadow-lg);
-            cursor: pointer;
-            transition: transform var(--transition-base);
+            transition: all var(--transition-base);
         }
 
-        .map-preview:hover {
-            transform: scale(1.02);
+        .floor-plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .floor-plan-image {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .floor-plan-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .floor-plan-card:hover .floor-plan-image img {
+            transform: scale(1.1);
+        }
+
+        .floor-plan-badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--color-terracotta);
+            color: var(--color-white);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            font-weight: 600;
+        }
+
+        .floor-plan-content {
+            padding: var(--space-6);
+        }
+
+        .floor-plan-title {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-navy);
+            margin-bottom: var(--space-4);
+        }
+
+        .floor-plan-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-value {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-terracotta);
+        }
+
+        .spec-label {
+            font-size: var(--text-xs);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            margin: var(--space-12) 0;
+        }
+
+        .progress-item {
+            margin-bottom: var(--space-8);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-3);
+        }
+
+        .progress-label {
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .progress-percentage {
+            font-weight: 700;
+            color: var(--color-terracotta);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: var(--color-cream);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-terracotta), var(--color-terracotta-light));
+            border-radius: var(--radius-full);
+            transition: width 1s ease-out;
+        }
+
+        /* Location Map */
+        .location-map {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 1024px) {
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-tabs {
+                flex-direction: column;
+            }
+
+            .project-tab {
+                width: 100%;
+                text-align: left;
+            }
+
+            .floor-plan-specs {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- Top Bar -->
-    <div class="modern-topbar">
+    <div class="top-bar">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                <div style="display: flex; gap: 2rem;">
-                    <a href="tel:+919366624545">
-                        <i class="fa fa-phone"></i>+91-9366624545
-                    </a>
-                    <a href="mailto:info@guhapromoters.com">
-                        <i class="fa fa-envelope"></i>info@guhapromoters.com
-                    </a>
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="top-bar-social">
+                        <a href="https://facebook.com/guhapromoters" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/guhapromoters" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/guhapromoters" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/guhapromoters" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="top-bar-info">
+                        <a href="tel:+919366624545"><i class="fas fa-phone-alt"></i> +91-9366624545</a>
+                        <a href="mailto:info@guhapromoters.com"><i class="fas fa-envelope"></i> info@guhapromoters.com</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modern Navigation -->
-    <nav class="modern-nav" id="mainNav">
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="GUHA Promoters Logo">
-            </a>
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="GUHA Promoters Logo">
+                    </a>
+                </div>
 
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fa fa-bars"></i>
-            </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="projects-ongoing.html" class="active">Ongoing Projects</a></li>
+                    <li><a href="projects-completed.html">Completed Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="projects-ongoing.html" class="active">Ongoing Projects</a></li>
-                <li><a href="projects-completed.html">Completed Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+                <div class="nav-cta">
+                    <a href="tel:+919366624545" class="btn btn-primary">Schedule Appointment</a>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, #1e3a5f, #2c5282); padding: 4rem 0; text-align: center; color: white;">
-        <div class="container">
-            <h1 style="color: white;">Ongoing Projects</h1>
-            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; max-width: 700px; margin: 1rem auto 0;">Discover our latest premium developments in Coimbatore</p>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('images/portfolio/slide01.jpg'); position: relative; height: 60vh; min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(27, 42, 71, 0.85) 0%, rgba(27, 42, 71, 0.65) 100%); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2; max-width: 900px; padding: 0 var(--space-6);" data-aos="fade-up">
+            <div class="page-hero-label" style="color: var(--color-terracotta); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 4px; font-weight: 600; margin-bottom: var(--space-6);">ONGOING PROJECTS</div>
+            <h1 style="font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl)); color: var(--color-white); font-weight: 700; line-height: 1.2; margin-top: var(--space-10);">
+                Building Your<br>
+                <span class="heading-accent">Dream Homes</span>
+            </h1>
         </div>
     </section>
 
-    <!-- Project Details Section -->
+    <!-- Main Project Section -->
     <section class="section">
         <div class="container">
-            <!-- Project Hero -->
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; margin-bottom: 4rem;">
-                <div>
-                    <img src="images/portfolio/guha_fantacy.jpg" alt="Guha Fantasy, Coimbatore" style="width: 100%; border-radius: 1rem; box-shadow: var(--shadow-xl);">
-                </div>
-                <div>
-                    <div class="section-subtitle">Premium Villas</div>
-                    <h2>Guha Fantasy</h2>
-                    <p style="font-size: 1.125rem; margin-bottom: 2rem;">Guha Fantasy is an exclusive individual villas development, located in Saravanampatty, Athipalayam Bus stop, Coimbatore. With most of the software and ITES giants setting up shop in Saravanampatty, this locality promises to become a premium destination in the city.</p>
+            <!-- Project Header -->
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">FEATURED PROJECT</div>
+                <h2 class="section-title">Guha <span class="heading-accent">Residency</span></h2>
+                <p class="section-description">Exclusive individual villas in the heart of Coimbatore with modern amenities</p>
+            </div>
 
-                    <div style="background: var(--gray-50); padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-                        <h4 style="margin-bottom: 1rem;">Key Highlights</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fa fa-check-circle" style="color: var(--secondary-color); margin-right: 0.75rem;"></i>
-                                <span>Individual Villas in Prime Location</span>
-                            </li>
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fa fa-check-circle" style="color: var(--secondary-color); margin-right: 0.75rem;"></i>
-                                <span>Close to IT Parks & Business Districts</span>
-                            </li>
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fa fa-check-circle" style="color: var(--secondary-color); margin-right: 0.75rem;"></i>
-                                <span>World-Class Amenities</span>
-                            </li>
-                            <li style="display: flex; align-items: center;">
-                                <i class="fa fa-check-circle" style="color: var(--secondary-color); margin-right: 0.75rem;"></i>
-                                <span>Premium Construction Quality</span>
-                            </li>
-                        </ul>
+            <!-- Project Tabs -->
+            <div class="project-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="project-tab active" onclick="switchTab('overview')">Overview</button>
+                <button class="project-tab" onclick="switchTab('amenities')">Amenities</button>
+                <button class="project-tab" onclick="switchTab('floor-plans')">Floor Plans</button>
+                <button class="project-tab" onclick="switchTab('progress')">Progress</button>
+                <button class="project-tab" onclick="switchTab('location')">Location</button>
+            </div>
+
+            <!-- Tab: Overview -->
+            <div id="overview" class="tab-content active">
+                <div class="split-layout" data-aos="fade-up">
+                    <div class="split-image">
+                        <img src="images/portfolio/guha_fantacy.jpg" alt="Guha Residency - Modern Villas" loading="lazy">
                     </div>
+                    <div class="split-content">
+                        <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-6);">Premium Living in Saravanampatty</h3>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--space-6);">
+                            Guha Residency is an exclusive residential development featuring individual villas designed for modern families. Located in the prime area of Saravanampatty, these homes offer the perfect blend of luxury, comfort, and convenience.
+                        </p>
 
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Enquire Now</a>
+                        <div class="project-details-grid">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Location</h4>
+                                    <p>Saravanampatty, Athipalayam Bus stop, Coimbatore</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Expected Completion</h4>
+                                    <p>December 2025</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Property Type</h4>
+                                    <p>Individual Villas (3 & 4 BHK)</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Plot Sizes</h4>
+                                    <p>1200 - 2400 sq.ft</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Site Visit</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Tabbed Content -->
-            <div class="card" style="padding: 3rem;">
-                <div class="tabs">
-                    <button class="tab active" data-tab="about">About the Project</button>
-                    <button class="tab" data-tab="amenities">Location & Amenities</button>
-                    <button class="tab" data-tab="layout">Layout Sketch</button>
-                    <button class="tab" data-tab="location">Location Map</button>
+            <!-- Tab: Amenities -->
+            <div id="amenities" class="tab-content">
+                <h3 style="font-size: var(--text-3xl); text-align: center; margin-bottom: var(--space-4);">World-Class <span class="heading-accent">Amenities</span></h3>
+                <p style="text-align: center; font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-12);">Modern facilities designed for your comfort and convenience</p>
+
+                <div class="amenities-grid">
+                    <div class="amenity-item" data-aos="fade-up">
+                        <div class="amenity-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <h4 class="amenity-title">Swimming Pool</h4>
+                        <p class="amenity-description">Temperature controlled swimming pool with separate kids pool</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="amenity-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h4 class="amenity-title">Fitness Center</h4>
+                        <p class="amenity-description">Fully equipped modern gymnasium with cardio and strength training</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="amenity-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4 class="amenity-title">Landscaped Gardens</h4>
+                        <p class="amenity-description">Beautifully designed gardens and green spaces for relaxation</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up">
+                        <div class="amenity-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h4 class="amenity-title">Children's Play Area</h4>
+                        <p class="amenity-description">Safe and fun play zone with modern equipment for kids</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="amenity-icon">
+                            <i class="fas fa-parking"></i>
+                        </div>
+                        <h4 class="amenity-title">Covered Parking</h4>
+                        <p class="amenity-description">Ample covered parking space for residents and visitors</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="amenity-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="amenity-title">24/7 Security</h4>
+                        <p class="amenity-description">Round-the-clock security with CCTV surveillance</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up">
+                        <div class="amenity-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="amenity-title">Power Backup</h4>
+                        <p class="amenity-description">100% power backup for uninterrupted electricity</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="amenity-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4 class="amenity-title">Water Supply</h4>
+                        <p class="amenity-description">24/7 water supply with rainwater harvesting</p>
+                    </div>
+
+                    <div class="amenity-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="amenity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="amenity-title">Club House</h4>
+                        <p class="amenity-description">Modern clubhouse for social gatherings and events</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Floor Plans -->
+            <div id="floor-plans" class="tab-content">
+                <h3 style="font-size: var(--text-3xl); text-align: center; margin-bottom: var(--space-12);">Choose Your <span class="heading-accent">Perfect Home</span></h3>
+
+                <div class="floor-plans">
+                    <div class="floor-plan-card" data-aos="fade-up">
+                        <div class="floor-plan-image">
+                            <img src="images/portfolio/slide01.jpg" alt="3 BHK Villa Floor Plan" loading="lazy">
+                            <div class="floor-plan-badge">Available</div>
+                        </div>
+                        <div class="floor-plan-content">
+                            <h4 class="floor-plan-title">3 BHK Villa</h4>
+                            <div class="floor-plan-specs">
+                                <div class="spec-item">
+                                    <div class="spec-value">1200</div>
+                                    <div class="spec-label">Sq.Ft</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">3</div>
+                                    <div class="spec-label">Bedrooms</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">2</div>
+                                    <div class="spec-label">Bathrooms</div>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="floor-plan-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="floor-plan-image">
+                            <img src="images/portfolio/slide02.jpg" alt="4 BHK Villa Floor Plan" loading="lazy">
+                            <div class="floor-plan-badge">Available</div>
+                        </div>
+                        <div class="floor-plan-content">
+                            <h4 class="floor-plan-title">4 BHK Villa</h4>
+                            <div class="floor-plan-specs">
+                                <div class="spec-item">
+                                    <div class="spec-value">1800</div>
+                                    <div class="spec-label">Sq.Ft</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">4</div>
+                                    <div class="spec-label">Bedrooms</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">3</div>
+                                    <div class="spec-label">Bathrooms</div>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="floor-plan-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="floor-plan-image">
+                            <img src="images/portfolio/slide03.jpg" alt="4 BHK Duplex Villa" loading="lazy">
+                            <div class="floor-plan-badge" style="background: #10b981;">Premium</div>
+                        </div>
+                        <div class="floor-plan-content">
+                            <h4 class="floor-plan-title">4 BHK Duplex</h4>
+                            <div class="floor-plan-specs">
+                                <div class="spec-item">
+                                    <div class="spec-value">2400</div>
+                                    <div class="spec-label">Sq.Ft</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">4</div>
+                                    <div class="spec-label">Bedrooms</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">4</div>
+                                    <div class="spec-label">Bathrooms</div>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Progress -->
+            <div id="progress" class="tab-content">
+                <h3 style="font-size: var(--text-3xl); text-align: center; margin-bottom: var(--space-4);">Construction <span class="heading-accent">Progress</span></h3>
+                <p style="text-align: center; font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-12);">Track the development of your dream home</p>
+
+                <div class="progress-section" data-aos="fade-up">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Site Development</span>
+                            <span class="progress-percentage">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Foundation Work</span>
+                            <span class="progress-percentage">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Structure Construction</span>
+                            <span class="progress-percentage">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Electrical & Plumbing</span>
+                            <span class="progress-percentage">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Finishing Works</span>
+                            <span class="progress-percentage">40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Landscaping</span>
+                            <span class="progress-percentage">25%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%;"></div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- About Tab -->
-                <div class="tab-content active" id="about">
-                    <h3 style="margin-bottom: 1.5rem;">About Guha Fantasy</h3>
-                    <p style="font-size: 1.125rem; line-height: 1.8;">Living at GUHA Fantasy will give you instant access to the best colleges, schools and healthcare centers. Shopping and many conveniences are very close, making GUHA Fantasy an ideal choice to make your home.</p>
-                    <p style="font-size: 1.125rem; line-height: 1.8; margin-top: 1rem;">At GUHA Builders and Developers, our team comprises people with several decades of expertise in real estate. Our architects are one of India's most sought after architects. We have also instituted a unique process methodology that allows us to monitor every aspect of quality control in building of your home, whether it is the raw materials used, or in the manner in which it is constructed.</p>
+                <div style="text-align: center; margin-top: var(--space-12);">
+                    <p style="font-size: var(--text-xl); font-weight: 600; color: var(--color-navy); margin-bottom: var(--space-4);">Overall Progress: <span style="color: var(--color-terracotta);">67%</span></p>
+                    <p style="color: var(--color-text-secondary);">Expected Completion: December 2025</p>
+                </div>
+            </div>
+
+            <!-- Tab: Location -->
+            <div id="location" class="tab-content">
+                <h3 style="font-size: var(--text-3xl); text-align: center; margin-bottom: var(--space-4);">Prime <span class="heading-accent">Location</span></h3>
+                <p style="text-align: center; font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-12);">Saravanampatty, Athipalayam - Coimbatore's Most Sought-After Area</p>
+
+                <div class="location-map" data-aos="fade-up">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3318!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzAwLjUiTiA3NsKwNTcnMjAuOSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Guha Residency Location Map">
+                    </iframe>
                 </div>
 
-                <!-- Amenities Tab -->
-                <div class="tab-content" id="amenities">
-                    <h3 style="margin-bottom: 1.5rem;">Proximity to Key Locations</h3>
-                    <ul class="amenities-list">
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Railway Station:</strong> 18 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Gandhi Puram:</strong> 15 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Ganapathy:</strong> 13 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Saravanampatty:</strong> 5 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>CTS:</strong> 6 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Airport:</strong> 12 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Tidel Park:</strong> 13 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>KGISL:</strong> 6 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>KCT:</strong> 7 Kms</span></li>
-                        <li><i class="fa fa-map-marker-alt"></i> <span><strong>Bosch:</strong> 6 Kms</span></li>
-                    </ul>
-                </div>
+                <div class="grid grid-3" style="margin-top: var(--space-12);">
+                    <div class="card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4>Schools Nearby</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--space-2);">• Bharathi Vidyalaya - 2 km</li>
+                            <li style="margin-bottom: var(--space-2);">• KG International - 3 km</li>
+                            <li>• PSBB School - 4 km</li>
+                        </ul>
+                    </div>
 
-                <!-- Layout Tab -->
-                <div class="tab-content" id="layout">
-                    <h3 style="margin-bottom: 1.5rem;">Layout Sketch</h3>
-                    <a href="images/routemap.jpg" target="_blank">
-                        <img src="images/routemap.jpg" alt="Route Map" class="map-preview">
-                    </a>
-                    <p style="text-align: center; margin-top: 1rem; color: var(--gray-600);">Click on image to get larger view</p>
-                </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4>Healthcare</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--space-2);">• KMCH Hospital - 3 km</li>
+                            <li style="margin-bottom: var(--space-2);">• PSG Hospitals - 4 km</li>
+                            <li>• Kovai Medical - 5 km</li>
+                        </ul>
+                    </div>
 
-                <!-- Location Map Tab -->
-                <div class="tab-content" id="location">
-                    <h3 style="margin-bottom: 1.5rem;">Location Map</h3>
-                    <a href="images/location map.jpg" target="_blank">
-                        <img src="images/location map.jpg" alt="Location Map" class="map-preview">
-                    </a>
-                    <p style="text-align: center; margin-top: 1rem; color: var(--gray-600);">Click on image to get larger view</p>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4>Shopping & Dining</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--space-2);">• Prozone Mall - 3 km</li>
+                            <li style="margin-bottom: var(--space-2);">• Brookefields - 4 km</li>
+                            <li>• Fun Mall - 2 km</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, #1e3a5f, #2c5282); padding: 4rem 0;">
+    <section class="section section-navy">
         <div class="container">
-            <div style="text-align: center; color: white; max-width: 800px; margin: 0 auto;">
-                <h2 style="color: white; margin-bottom: 1.5rem;">Interested in Guha Fantasy?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; margin-bottom: 2rem;">Schedule a site visit or request more information about this premium project.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">Contact Us</a>
-                    <a href="projects-completed.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">View Completed Projects</a>
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;" data-aos="fade-up">
+                <div class="section-label" style="color: var(--color-terracotta);">GET STARTED</div>
+                <h2 class="section-title" style="color: var(--color-white);">
+                    Ready to Own Your <span class="heading-accent">Dream Home?</span>
+                </h2>
+                <p style="font-size: var(--text-xl); color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-10);">
+                    Book your site visit today and explore Guha Residency firsthand. Our team is ready to help you find your perfect home.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Schedule Site Visit</a>
+                    <a href="tel:+919366624545" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modern Footer -->
-    <footer class="modern-footer">
+    <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-top">
                 <div class="footer-widget">
-                    <h3>About GUHA Promoters</h3>
-                    <p>Leading real estate developers in Coimbatore, committed to building quality homes with world-class amenities and exceptional service.</p>
+                    <img src="images/logo.png" alt="GUHA Promoters" style="height: 50px; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+                    <p>Leading real estate developers in Coimbatore, committed to building quality homes with world-class amenities and exceptional service since 2000.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-widget">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="projects-ongoing.html">Residential Villas</a></li>
+                        <li><a href="projects-completed.html">Completed Projects</a></li>
+                        <li><a href="about-us.html">Property Development</a></li>
+                        <li><a href="contact.html">Investment Advisory</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                    </ul>
                 </div>
 
                 <div class="footer-widget">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index-oftop.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="projects-ongoing.html">Ongoing Projects</a></li>
                         <li><a href="projects-completed.html">Completed Projects</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-widget">
                     <h3>Contact Info</h3>
-                    <ul class="contact-info">
+                    <ul>
                         <li>
-                            <i class="fa fa-map-marker-alt"></i>
-                            <span>2/57-V, Sri Ram Illam,<br>Athipalayam Post, Coimbatore</span>
+                            <i class="fas fa-map-marker-alt" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
+                            2/57-V, Sri Ram Illam,<br>Athipalayam Post, Coimbatore - 641 103
                         </li>
-                        <li>
-                            <i class="fa fa-envelope"></i>
+                        <li style="margin-top: var(--space-4);">
+                            <i class="fas fa-envelope" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
                             <a href="mailto:info@guhapromoters.com">info@guhapromoters.com</a>
                         </li>
-                        <li>
-                            <i class="fa fa-phone"></i>
+                        <li style="margin-top: var(--space-4);">
+                            <i class="fas fa-phone" style="color: var(--color-terracotta); margin-right: var(--space-2);"></i>
                             <a href="tel:+919366624545">+91-9366624545</a>
                         </li>
                     </ul>
@@ -300,75 +883,49 @@
             </div>
 
             <div class="footer-bottom">
-                <p>Copyright &copy; 2015 - <a href="http://www.graphicsolutions.in" target="_blank">GSMEDIA</a>. All Rights Reserved. | Web Design: <a href="http://graphicsolutions.in" target="_blank">Graphic Solutions</a></p>
+                <p>Copyright &copy; 2024 <a href="index-oftop.html">GUHA Promoters</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Enhanced JavaScript -->
+    <script src="js/oftop-enhanced.js"></script>
+
+    <!-- Tab Switching Script -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // Sticky Navigation
-        const nav = document.getElementById('mainNav');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
-        });
-
-        // Tabs functionality
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.getAttribute('data-tab');
-
-                // Remove active class from all tabs and contents
-                tabs.forEach(t => t.classList.remove('active'));
-                tabContents.forEach(tc => tc.classList.remove('active'));
-
-                // Add active class to clicked tab and corresponding content
-                tab.classList.add('active');
-                document.getElementById(targetId).classList.add('active');
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
             });
-        });
-    </script>
 
-    <style>
-        @media (max-width: 768px) {
-            section > div > div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important;
+            // Remove active class from all tabs
+            document.querySelectorAll('.project-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to tabs if needed
+            if (window.innerWidth < 768) {
+                document.querySelector('.project-tabs').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         }
-    </style>
+    </script>
 </body>
 </html>
