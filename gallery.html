@@ -517,6 +517,132 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- WhatsApp Chat Widget -->
+    <a href="https://wa.me/919366624545?text=Hi%20GUHA%20Promoters%2C%20I%27m%20interested%20in%20luxury%20villas%20in%20Coimbatore.%20Please%20share%20more%20details."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- WhatsApp Widget Styles -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background-color: #25D366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .whatsapp-float:hover {
+            width: 200px;
+            border-radius: 30px;
+            background-color: #20BA5A;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-float i {
+            font-size: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float .whatsapp-text {
+            position: absolute;
+            right: 70px;
+            white-space: nowrap;
+            opacity: 0;
+            font-size: 16px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+        }
+
+        .whatsapp-float:hover i {
+            margin-right: 120px;
+        }
+
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .whatsapp-float {
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+
+            .whatsapp-float i {
+                font-size: 28px;
+            }
+
+            .whatsapp-float:hover {
+                width: 56px;
+                border-radius: 50px;
+            }
+
+            .whatsapp-float:hover i {
+                margin-right: 0;
+            }
+
+            .whatsapp-float .whatsapp-text {
+                display: none;
+            }
+        }
+
+        /* Ensure it's above other elements */
+        .whatsapp-float {
+            z-index: 10000;
+        }
+
+        /* Adjust back-to-top button to make room */
+        .back-to-top {
+            bottom: 30px;
+            right: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
