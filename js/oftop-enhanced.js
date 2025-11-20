@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPropertySlider();
     initSmoothScroll();
     initFormValidation();
+    initContactForm();
     initLazyLoading();
     initStatisticsCounter();
     initAccordion();
@@ -430,43 +431,108 @@ function validateInput(input) {
 
 function submitForm(form) {
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
 
     // Show loading state
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
+    const originalHTML = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(function() {
-        // Success
-        showNotification('Thank you! Your message has been sent successfully.', 'success');
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-
-        // In production, replace with actual AJAX call:
-        /*
-        fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            showNotification('Thank you! Your message has been sent.', 'success');
+    // Send AJAX request to PHP backend
+    fetch('ajax/sendemail.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showNotification(data.message, 'success');
             form.reset();
-        })
-        .catch(error => {
-            showNotification('Sorry, something went wrong. Please try again.', 'error');
-        })
-        .finally(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+
+            // Clear any validation errors
+            form.querySelectorAll('.error-message').forEach(msg => msg.remove());
+            form.querySelectorAll('.error').forEach(input => input.classList.remove('error'));
+        } else {
+            showNotification(data.message, 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Form submission error:', error);
+        showNotification('Sorry, something went wrong. Please try again or call us at +91-9366624545.', 'error');
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHTML;
+    });
+}
+
+// ============================================
+// CONTACT FORM SPECIFIC HANDLER
+// ============================================
+
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let isValid = true;
+        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+        const consentCheckbox = document.getElementById('consent');
+
+        // Clear previous errors
+        contactForm.querySelectorAll('.error-message').forEach(msg => {
+            msg.textContent = '';
+            msg.style.display = 'none';
         });
-        */
-    }, 1500);
+        contactForm.querySelectorAll('.error').forEach(input => input.classList.remove('error'));
+
+        // Validate all required inputs
+        inputs.forEach(input => {
+            if (!validateInput(input)) {
+                isValid = false;
+            }
+        });
+
+        // Special validation for consent checkbox
+        if (consentCheckbox && !consentCheckbox.checked) {
+            isValid = false;
+            const errorMsg = consentCheckbox.parentElement.nextElementSibling;
+            if (errorMsg && errorMsg.classList.contains('error-message')) {
+                errorMsg.textContent = 'You must agree to receive communications';
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        if (isValid) {
+            submitForm(contactForm);
+        } else {
+            // Scroll to first error
+            const firstError = contactForm.querySelector('.error');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstError.focus();
+            }
+        }
+    });
+
+    // Real-time validation
+    contactForm.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('blur', function() {
+            validateInput(this);
+        });
+
+        // Clear error on input
+        input.addEventListener('input', function() {
+            const errorMsg = this.parentElement.querySelector('.error-message');
+            if (errorMsg) {
+                errorMsg.textContent = '';
+                errorMsg.style.display = 'none';
+            }
+            this.classList.remove('error');
+        });
+    });
 }
 
 function showNotification(message, type = 'success') {
