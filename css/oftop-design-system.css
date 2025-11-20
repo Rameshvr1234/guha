@@ -468,7 +468,7 @@ a:hover {
 }
 
 .nav-logo img {
-  height: 50px;
+  height: 60px;
   transition: transform var(--transition-base);
 }
 
