@@ -881,5 +881,89 @@
         }
     }
     </style>
+
+    <!-- Crisp Live Chat Widget -->
+    <script type="text/javascript">
+        window.$crisp=[];window.CRISP_WEBSITE_ID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+
+    <!-- Simple Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p><i class="fas fa-cookie-bite"></i> We use cookies to improve your experience. By continuing to use this site, you accept our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            <button onclick="acceptCookies()" class="btn btn-primary btn-sm">Accept</button>
+        </div>
+    </div>
+
+    <style>
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-navy);
+            color: white;
+            padding: 20px;
+            z-index: 10000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            animation: slideUp 0.5s ease-out;
+        }
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .cookie-content p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .cookie-content a {
+            color: var(--color-terracotta);
+            text-decoration: underline;
+        }
+        .cookie-consent .btn-sm {
+            padding: 8px 20px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <script>
+        // Cookie Consent Logic
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').style.display = 'none';
+
+            // Enable analytics after consent
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        }
+
+        // Check if user already accepted
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').style.display = 'block';
+                }, 2000); // Show after 2 seconds
+            }
+        });
+    </script>
 </body>
 </html>
