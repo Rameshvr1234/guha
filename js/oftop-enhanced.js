@@ -46,23 +46,39 @@ function initMobileMenu() {
 
     if (!mobileMenuToggle || !navMenu) return;
 
-    mobileMenuToggle.addEventListener('click', function() {
-        const isExpanded = navMenu.classList.toggle('active');
-        this.setAttribute('aria-expanded', isExpanded);
+    function openMenu() {
+        navMenu.classList.add('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    }
 
-        const icon = this.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+    function closeMenu() {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (navMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
+        if (navMenu.classList.contains('active') &&
+            !navMenu.contains(e.target) &&
+            !mobileMenuToggle.contains(e.target)) {
+            closeMenu();
         }
     });
 
@@ -70,12 +86,22 @@ function initMobileMenu() {
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
+            closeMenu();
         });
+    });
+
+    // Close menu on resize if window becomes larger
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
     });
 }
 
