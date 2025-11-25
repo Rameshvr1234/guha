@@ -7,6 +7,37 @@
  */
 
 // ============================================
+// PAGE PRELOADER
+// ============================================
+
+// Mark document as loading
+document.body.classList.add('loading');
+
+// Handle preloader
+window.addEventListener('load', function() {
+    // Wait for all resources including images and iframes
+    setTimeout(function() {
+        const preloader = document.getElementById('preloader');
+
+        // Add loaded class to trigger fade out
+        if (preloader) {
+            preloader.classList.add('loaded');
+        }
+
+        // Remove loading class from body
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+
+        // Remove preloader from DOM after animation
+        setTimeout(function() {
+            if (preloader) {
+                preloader.remove();
+            }
+        }, 500);
+    }, 500); // Small delay to ensure smooth experience
+});
+
+// ============================================
 // INITIALIZE ON DOM LOADED
 // ============================================
 
@@ -17,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 1000,
             easing: 'ease-in-out',
             once: true,
-            offset: 100
+            offset: 100,
+            disable: false
         });
     }
 
@@ -193,12 +225,23 @@ function initHeroSlider() {
 
 let slideIndex = 1;
 let slideTimer;
+let isTransitioning = false;
 
 function initCustomHeroSlider() {
     if (!document.querySelector('.hero-slider')) return;
 
-    showSlides(slideIndex);
-    autoSlide();
+    // Initialize YouTube player API for better video control
+    initYouTubePlayer();
+
+    // Show first slide with smooth entrance
+    showSlides(slideIndex, true);
+
+    // Wait for page to fully load before starting auto-slide
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            autoSlide();
+        }, 1000); // Wait 1 second after page load to start auto-sliding
+    });
 
     // Add keyboard navigation
     document.addEventListener('keydown', function(e) {
@@ -222,19 +265,43 @@ function initCustomHeroSlider() {
     }
 }
 
+// Initialize YouTube Player API
+function initYouTubePlayer() {
+    // Load YouTube IFrame API if not already loaded
+    if (!window.YT) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // Lazy load YouTube video iframe after page loads
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const heroVideo = document.getElementById('heroVideo');
+            if (heroVideo && heroVideo.dataset.src) {
+                heroVideo.src = heroVideo.dataset.src;
+                heroVideo.removeAttribute('data-src');
+            }
+        }, 800); // Wait 800ms after page load to start video
+    });
+}
+
 function changeSlide(n) {
+    if (isTransitioning) return; // Prevent overlapping transitions
     clearTimeout(slideTimer);
     showSlides(slideIndex += n);
     autoSlide();
 }
 
 function currentSlide(n) {
+    if (isTransitioning) return; // Prevent overlapping transitions
     clearTimeout(slideTimer);
     showSlides(slideIndex = n);
     autoSlide();
 }
 
-function showSlides(n) {
+function showSlides(n, isInitial = false) {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dot');
 
@@ -243,27 +310,87 @@ function showSlides(n) {
     if (n > slides.length) slideIndex = 1;
     if (n < 1) slideIndex = slides.length;
 
-    slides.forEach(slide => slide.classList.remove('active'));
+    // Set transitioning flag
+    isTransitioning = true;
+
+    // Get current and next slides
+    const currentSlide = document.querySelector('.hero-slide.active');
+    const nextSlide = slides[slideIndex - 1];
+
+    // Remove active class from all slides
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+
+    // Update dots
     if (dots.length) {
         dots.forEach(dot => {
             dot.classList.remove('active');
             dot.setAttribute('aria-pressed', 'false');
         });
-    }
-
-    slides[slideIndex - 1].classList.add('active');
-    if (dots.length) {
         dots[slideIndex - 1].classList.add('active');
         dots[slideIndex - 1].setAttribute('aria-pressed', 'true');
+    }
+
+    // Add active class with smooth transition
+    if (isInitial) {
+        // First load - no transition needed
+        nextSlide.classList.add('active');
+        setTimeout(function() {
+            isTransitioning = false;
+        }, 100);
+    } else {
+        // Smooth crossfade between slides
+        nextSlide.style.opacity = '0';
+        nextSlide.classList.add('active');
+
+        // Trigger reflow
+        nextSlide.offsetHeight;
+
+        // Fade in next slide
+        setTimeout(function() {
+            nextSlide.style.opacity = '1';
+        }, 50);
+
+        // Remove inline styles after transition
+        setTimeout(function() {
+            nextSlide.style.opacity = '';
+            isTransitioning = false;
+        }, 1050); // Match CSS transition duration (1s) + buffer
+    }
+
+    // Animate hero content
+    animateHeroContent(nextSlide);
+}
+
+function animateHeroContent(slide) {
+    const heroContent = slide.querySelector('.hero-content-inner');
+    if (heroContent) {
+        // Reset animation
+        heroContent.style.opacity = '0';
+        heroContent.style.transform = 'translateY(30px)';
+
+        // Trigger animation
+        setTimeout(function() {
+            heroContent.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+        }, 300); // Start after slide transition begins
     }
 }
 
 function autoSlide() {
+    clearTimeout(slideTimer);
     slideTimer = setTimeout(function() {
-        slideIndex++;
-        showSlides(slideIndex);
-        autoSlide();
-    }, 6000);
+        if (!isTransitioning) {
+            slideIndex++;
+            showSlides(slideIndex);
+            autoSlide();
+        } else {
+            // If still transitioning, wait a bit more
+            setTimeout(autoSlide, 500);
+        }
+    }, 7000); // Changed from 6000 to 7000ms for better pacing
 }
 
 // ============================================
